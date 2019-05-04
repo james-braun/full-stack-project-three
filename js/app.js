@@ -26,13 +26,13 @@ $('#design').on('change', function () {
     if ($(this).val() === "js puns") {
         $('#colors-js-puns').show();
         $('#color').val('cornflowerblue');
-        $('option[value="tomato"],[value="steelblue"],[value="dimgrey"]').hide();
-        $('option[value="cornflowerblue"],[value="darkslategrey"],[value="gold"]').show();
+        $('option[value="tomato"],option[value="steelblue"],option[value="dimgrey"]').hide();
+        $('option[value="cornflowerblue"],option[value="darkslategrey"],option[value="gold"]').show();
     } else if ($(this).val() === "heart js") {
         $('#colors-js-puns').show();
         $('#color').val('tomato');
-        $('option[value="cornflowerblue"],[value="darkslategrey"],[value="gold"]').hide();
-        $('option[value="tomato"],[value="steelblue"],[value="dimgrey"]').show();
+        $('option[value="cornflowerblue"],option[value="darkslategrey"],option[value="gold"]').hide();
+        $('option[value="tomato"],option[value="steelblue"],option[value="dimgrey"]').show();
     } else {
         $('#colors-js-puns').hide();
     }
