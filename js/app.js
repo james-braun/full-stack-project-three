@@ -26,7 +26,7 @@ $('#design').on('change', function () {
     if ($(this).val() === "js puns") {
         $('#colors-js-puns').show();
         $('#color').val('cornflowerblue');
-        $('option[value="tomato"]').hide();
+        $('option[value="tomato"]').css('display', 'none');
         $('option[value = "steelblue"]').hide();
         $('option[value = "dimgrey"]').hide();
         $('option[value ="cornflowerblue"]').show();
