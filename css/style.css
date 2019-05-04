@@ -14,8 +14,8 @@ button {
 
 body {
   font: 1em/1.5;
-  color: #184f68;
-	background: #accbd9;
+  color: white;/*#184f68;*/
+  background-color: darkblue; /*#accbd9;*/
 }
 
 header {
@@ -24,8 +24,13 @@ header {
 
 h1 {
 	font-size: 2.5em;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    color: white;
 	margin: 0;
+}
+
+span {
+    color: white;
 }
 
 a {
@@ -33,7 +38,11 @@ a {
 }
 
 p {
-    color: #000;
+    color: white;
+}
+
+select {
+    background-color: #c1deeb;
 }
 
 /* ================================= 
@@ -42,7 +51,7 @@ p {
 
 form {
 	padding: .875em 1.875em 1.875em;
-	background: #85b5ca;
+	background-color: cornflowerblue; /*#85b5ca;*/
 }
 
 fieldset,
@@ -75,7 +84,7 @@ legend {
 }
 
 label {
-	color: #000;
+	color: white;
 	display: block;
 	margin-bottom: .5em;
 }

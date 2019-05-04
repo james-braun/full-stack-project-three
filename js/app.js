@@ -38,7 +38,7 @@ $('input[type="checkbox"]').each(function () {
     $(this).click(function () {
         if (!checkBoxFlag) {
             $('input[type="checkbox"]').each(function () {
-                $(this).parent().css('color', 'black');
+                $(this).parent().css('color', 'white');
             });
             checkBoxFlag = true;
         }
@@ -48,7 +48,7 @@ $('input[type="checkbox"]').each(function () {
                 number += parseInt($(this).parent().text().split('$')[1]);
                 $('input[name="express"]').prop("disabled", true).parent().css("color", "grey");
             } else {
-                $('input[name="express"]').prop("disabled", false).parent().css("color", "black");
+                $('input[name="express"]').prop("disabled", false).parent().css("color", "white");
                 number -= parseInt($(this).parent().text().split('$')[1]);
             }
         } else if ($(this).attr('name') === $('input[name="express"]').attr('name')) {
@@ -56,7 +56,7 @@ $('input[type="checkbox"]').each(function () {
                 number += parseInt($(this).parent().text().split('$')[1]);
                 $('input[name="js-frameworks"]').prop("disabled", true).parent().css("color", "grey");
             } else {
-                $('input[name="js-frameworks"]').prop("disabled", false).parent().css("color", "black");
+                $('input[name="js-frameworks"]').prop("disabled", false).parent().css("color", "white");
                 number -= parseInt($(this).parent().text().split('$')[1]);
             }
         } else if ($(this).attr('name') === $('input[name="js-libs"]').attr('name')) {
@@ -64,7 +64,7 @@ $('input[type="checkbox"]').each(function () {
                 number += parseInt($(this).parent().text().split('$')[1]);
                 $('input[name="node"]').prop("disabled", true).parent().css("color", "grey");
             } else {
-                $('input[name="node"]').prop("disabled", false).parent().css("color", "black");
+                $('input[name="node"]').prop("disabled", false).parent().css("color", "white");
                 number -= parseInt($(this).parent().text().split('$')[1]);
             }
         } else if ($(this).attr('name') === $('input[name="node"]').attr('name')) {
@@ -72,7 +72,7 @@ $('input[type="checkbox"]').each(function () {
                 number += parseInt($(this).parent().text().split('$')[1]);
                 $('input[name="js-libs"]').prop("disabled", true).parent().css("color", "grey");
             } else {
-                $('input[name="js-libs"]').prop("disabled", false).parent().css("color", "black");
+                $('input[name="js-libs"]').prop("disabled", false).parent().css("color", "white");
                 number -= parseInt($(this).parent().text().split('$')[1]);
             }
         } else if ($(this).attr('name') === $('input[name="all"]').attr('name')) {
@@ -120,16 +120,17 @@ $('#payment').on('change', function () {
 });
 
 $('button').click(function (e) {
-    e.preventDefault();
     if ($('#name').val() === '') {
+        e.preventDefault();
         $('#name').addClass("error");
     } else {
         $('#name').removeClass("error")
     }
-    var regExpression = /[^@]+@[^@.]+\.[a-z]+/i;
+    var regExpression = /^[^@]+@[^@.]+\.[a-z]+$/i;
     if (regExpression.test($('#mail').val())) {
         $('#mail').removeClass("error");
     } else {
+        e.preventDefault();
         $('#mail').addClass("error");
     }
     checkBoxFlag = false;
@@ -139,6 +140,7 @@ $('button').click(function (e) {
         }
     });
     if (!checkBoxFlag) {
+        e.preventDefault();
         $('input[type="checkbox"]').each(function () {
             $(this).parent().css('color', 'red');
         });
@@ -148,16 +150,19 @@ $('button').click(function (e) {
         });
     }
     if (!(/^[0-9]{13,16}$/.test($('#cc-num').val()))) {
+        e.preventDefault();
         $('#cc-num').addClass("error");
     } else {
         $('#cc-num').removeClass("error");
     }
     if (!(/^[0-9]{5,5}$/.test($('#zip').val()))) {
+        e.preventDefault();
         $('#zip').addClass("error");
     } else {
         $('#zip').removeClass("error");
     }
     if (!(/^[0-9]{3,3}$/.test($('#cvv').val()))) {
+        e.preventDefault();
         $('#cvv').addClass("error");
     } else {
         $('#cvv').removeClass("error");
