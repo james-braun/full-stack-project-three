@@ -154,9 +154,20 @@ button:hover {
 }
 
 /* ================================= 
-  Media Queries
+  Error Classes
 ==================================== */
 
+.error {
+    border: solid 1px #FF0000;
+} 
+.error-message {
+    color: red;
+    display: inline-block;
+    margin-bottom: .5em;
+}
+/* ================================= 
+  Media Queries
+==================================== */
 @media (min-width: 0) and (max-width: 679px) {
 	header {
 		padding: 2em 0;
@@ -182,4 +193,13 @@ button:hover {
 	.col-6 {
 		width: 49%;
 	}
+    .error-message {
+        position: relative;
+        display: inline;
+        left: 60%;
+    }
+
+    label[for="mail"] {
+        display: inline-block;
+    }
 }
