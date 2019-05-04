@@ -6,7 +6,7 @@ $('#other-title').hide();
 
 $('#colors-js-puns').hide()
 
-$('#title').change(function () {
+$('#title').on('change', function () {
     if ($(this).val() === "other") {
         $('[for="other-title"]').show();
         $('#other-title').show();
@@ -16,7 +16,7 @@ $('#title').change(function () {
     }
 });
 
-$('#design').change(function () {        
+$('#design').on('change', function () {        
     if ($(this).val() === "js puns") {
         $('#colors-js-puns').show();
         $('#color').val('cornflowerblue');
@@ -102,7 +102,7 @@ $('input[type="checkbox"]').each(function () {
 $('#payment').val("credit card");
 $('#credit-card + div').hide();
 $('#credit-card + div + div').hide();
-$('#payment').change(function () {
+$('#payment').on('change', function () {
     console.log($(this).val());
     if ($(this).val() === "credit card") {
         $('#credit-card').show();
@@ -171,12 +171,13 @@ $('#name,#mail,#cc-num,#zip,#cvv').focus(function () {
 $('label[for="mail"]').after('<span class="error-message"></span>');
 $('#mail').keyup(function () {
     var regExpression = /[^@]+@[^@.]+\.[a-z]+/i;
-    if (regExpression.test($('#mail').val())) {
-        $('#mail').removeClass("error");
+    if (regExpression.test($(this).val())) {
         $('.error-message').text("");
     } else {
-        $('#mail').addClass("error");
         $('.error-message').text("Format: user@example.com");
+        if ($(this).val() === '') {
+            $('.error-message').text("");
+        }
     }
 });
 
