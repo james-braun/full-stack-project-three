@@ -209,29 +209,33 @@ $('button').click(function (e) {
         });
     }
 
-    // If credit card number not between 13 and 16 digits
-    // add red border.
-    if (!(/^[0-9]{13,16}$/.test($('#cc-num').val()))) {
-        e.preventDefault();
-        $('#cc-num').addClass("error");
-    } else {
-        $('#cc-num').removeClass("error");
-    }
+    // If crdit card payment form is chosen then...
+    if ($('#payment').val() === "credit card") {
 
-    // If zipcode not five digits then add red border.
-    if (!(/^[0-9]{5,5}$/.test($('#zip').val()))) {
-        e.preventDefault();
-        $('#zip').addClass("error");
-    } else {
-        $('#zip').removeClass("error");
-    }
+        // If credit card number not between 13 and 16 digits
+        // add red border.
+        if (!(/^[0-9]{13,16}$/.test($('#cc-num').val()))) {
+            e.preventDefault();
+            $('#cc-num').addClass("error");
+        } else {
+            $('#cc-num').removeClass("error");
+        }
 
-    // If cvv not 3 digits then add red border.
-    if (!(/^[0-9]{3,3}$/.test($('#cvv').val()))) {
-        e.preventDefault();
-        $('#cvv').addClass("error");
-    } else {
-        $('#cvv').removeClass("error");
+        // If zipcode not five digits then add red border.
+        if (!(/^[0-9]{5,5}$/.test($('#zip').val()))) {
+            e.preventDefault();
+            $('#zip').addClass("error");
+        } else {
+            $('#zip').removeClass("error");
+        }
+
+        // If cvv not 3 digits then add red border.
+        if (!(/^[0-9]{3,3}$/.test($('#cvv').val()))) {
+            e.preventDefault();
+            $('#cvv').addClass("error");
+        } else {
+            $('#cvv').removeClass("error");
+        }
     }
 });
 
