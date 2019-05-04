@@ -29,7 +29,7 @@ $('#design').on('change', function () {
         $('option[value="tomato"]').hide();
         $('option[value = "steelblue"]').hide();
         $('option[value = "dimgrey"]').hide();
-        $('option[value="cornflowerblue"]').show();
+        $('option[value ="cornflowerblue"]').show();
         $('option[value = "darkslategrey"]').show();
         $('option[value = "gold"]').show();
     } else if ($(this).val() === "heart js") {
@@ -38,7 +38,7 @@ $('#design').on('change', function () {
         $('option[value="cornflowerblue"]').hide();
         $('option[value = "darkslategrey"]').hide();
         $('option[value = "gold"]').hide();
-        $('option[value="tomato"]').show();
+        $('option[value ="tomato"]').show();
         $('option[value = "steelblue"]').show();
         $('option[value = "dimgrey"]').show();
     } else {
