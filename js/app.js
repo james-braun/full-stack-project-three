@@ -9,8 +9,6 @@ $('#other-title').hide();
 
 // Hide t-shirt color select menu.
 $('#colors-js-puns').hide()
-var $array = $('#color');
-console.log($array[0]);
 
 // Hide or show 'other job role' on 'other' select.
 $('#title').on('change', function () {
