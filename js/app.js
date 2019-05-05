@@ -42,7 +42,7 @@ $('#design').on('change', function () {
         $('#colors-js-puns').hide();
     }
 });
-
+ 
 // number holds the cost of the activities person is attending.
 var number = 0;
 
