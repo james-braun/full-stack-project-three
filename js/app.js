@@ -24,23 +24,25 @@ $('#title').on('change', function () {
 // Show or hide t-shirt colors based on t-shirt theme select.
 $('#design').on('change', function () {        
     if ($(this).val() === "js puns") {
-        $('#colors-js-puns').show();
-        $('#color').val('cornflowerblue');
-        $('option[value="tomato"]').css('display', 'none');
+
+        $('option[value="tomato"]').hide();
         $('option[value = "steelblue"]').hide();
         $('option[value = "dimgrey"]').hide();
         $('option[value ="cornflowerblue"]').show();
         $('option[value = "darkslategrey"]').show();
         $('option[value = "gold"]').show();
-    } else if ($(this).val() === "heart js") {
         $('#colors-js-puns').show();
-        $('#color').val('tomato');
+        $('#color').val('cornflowerblue');
+    } else if ($(this).val() === "heart js") {
+
         $('option[value="cornflowerblue"]').hide();
         $('option[value = "darkslategrey"]').hide();
         $('option[value = "gold"]').hide();
         $('option[value ="tomato"]').show();
         $('option[value = "steelblue"]').show();
         $('option[value = "dimgrey"]').show();
+        $('#colors-js-puns').show();
+        $('#color').val('tomato');
     } else {
         $('#colors-js-puns').hide();
     }
