@@ -9,6 +9,8 @@ $('#other-title').hide();
 
 // Hide t-shirt color select menu.
 $('#colors-js-puns').hide()
+var $array = $('#color');
+console.log($array[0]);
 
 // Hide or show 'other job role' on 'other' select.
 $('#title').on('change', function () {
@@ -25,22 +27,29 @@ $('#title').on('change', function () {
 $('#design').on('change', function () {        
     if ($(this).val() === "js puns") {
 
-        $('option[value="tomato"]').hide();
-        $('option[value = "steelblue"]').hide();
-        $('option[value = "dimgrey"]').hide();
-        $('option[value ="cornflowerblue"]').show();
-        $('option[value = "darkslategrey"]').show();
-        $('option[value = "gold"]').show();
+        
+        $('#color').removeChild($array[0][3]);        
+        $('#color').removeChild($array[0][4]);        
+        $('#color').removeChild($array[0][5]);
+        $('#color').append($array[0][0]);        
+        $('#color').append($array[0][1]);        
+        $('#color').append($array[0][2]);
         $('#colors-js-puns').show();
         $('#color').val('cornflowerblue');
     } else if ($(this).val() === "heart js") {
 
-        $('option[value="cornflowerblue"]').hide();
-        $('option[value = "darkslategrey"]').hide();
-        $('option[value = "gold"]').hide();
-        $('option[value ="tomato"]').show();
-        $('option[value = "steelblue"]').show();
-        $('option[value = "dimgrey"]').show();
+        $('#color').removeChild($array[0][3]);
+        $('#color').removeChild($array[0][4]);
+        $('#color').removeChild($array[0][5]);
+        $('#color').append($array[0][0]);
+        $('#color').append($array[0][1]);
+        $('#color').append($array[0][2]);
+        //$('option[value="cornflowerblue"]').hide();
+        //$('option[value = "darkslategrey"]').hide();
+        //$('option[value = "gold"]').hide();
+        //$('option[value ="tomato"]').show();
+        //$('option[value = "steelblue"]').show();
+        //$('option[value = "dimgrey"]').show();
         $('#colors-js-puns').show();
         $('#color').val('tomato');
     } else {
