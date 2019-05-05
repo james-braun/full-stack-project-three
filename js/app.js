@@ -25,7 +25,7 @@ $('#title').on('change', function () {
 $('#design').on('change', function () {
     $('#color').html('');
     if ($(this).val() === "js puns") {
-
+ 
         $('#color').append('<option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>');        
         $('#color').append('<option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option>');        
         $('#color').append('<option value="gold">Gold (JS Puns shirt only)</option>');
