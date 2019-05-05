@@ -24,32 +24,20 @@ $('#title').on('change', function () {
 });
 
 // Show or hide t-shirt colors based on t-shirt theme select.
-$('#design').on('change', function () {        
+$('#design').on('change', function () {
+    $('#color').html('');
     if ($(this).val() === "js puns") {
 
-        
-        $('#color').removeChild($array[0][3]);        
-        $('#color').removeChild($array[0][4]);        
-        $('#color').removeChild($array[0][5]);
-        $('#color').append($array[0][0]);        
-        $('#color').append($array[0][1]);        
-        $('#color').append($array[0][2]);
+        $('#color').append('<option value="cornflowerblue">Cornflower Blue (JS Puns shirt only)</option>');        
+        $('#color').append('<option value="darkslategrey">Dark Slate Grey (JS Puns shirt only)</option>');        
+        $('#color').append('<option value="gold">Gold (JS Puns shirt only)</option>');
         $('#colors-js-puns').show();
         $('#color').val('cornflowerblue');
     } else if ($(this).val() === "heart js") {
 
-        $('#color').removeChild($array[0][3]);
-        $('#color').removeChild($array[0][4]);
-        $('#color').removeChild($array[0][5]);
-        $('#color').append($array[0][0]);
-        $('#color').append($array[0][1]);
-        $('#color').append($array[0][2]);
-        //$('option[value="cornflowerblue"]').hide();
-        //$('option[value = "darkslategrey"]').hide();
-        //$('option[value = "gold"]').hide();
-        //$('option[value ="tomato"]').show();
-        //$('option[value = "steelblue"]').show();
-        //$('option[value = "dimgrey"]').show();
+        $('#color').append('<option value="tomato">Tomato (I &#9829; JS shirt only)</option>');
+        $('#color').append('<option value="steelblue">Steel Blue (I &#9829; JS shirt only)</option>');
+        $('#color').append('<option value="dimgrey">Dim Grey (I &#9829; JS shirt only)</option>');
         $('#colors-js-puns').show();
         $('#color').val('tomato');
     } else {
