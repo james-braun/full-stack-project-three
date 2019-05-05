@@ -13,6 +13,7 @@ $('#colors-js-puns').hide()
 // Add a span to contain cedit card validation error message to the dom.
 $('label[for="cc-num"]').after('<span class="error-message card-error"></span>');
 
+// set default payment method to cc and prevent "select payment" option from being visible.
 $('#payment').val('credit card');
 $('#payment').html('<option value="credit card">Credit Card</option><option value="paypal">PayPal</option><option value="bitcoin">Bitcoin</option>');
 
