@@ -169,11 +169,13 @@ button:hover {
 .error {
     border: solid 1px red;
 } 
+
 .error-message {
     color: red;
     display: inline-block;
     margin-bottom: .5em;
 }
+
 /* ================================= 
   Media Queries
 ==================================== */
@@ -208,7 +210,12 @@ button:hover {
         left: 60%;
     }
 
-    label[for="mail"] {
+    .card-error {
+        left: 30%;
+    }
+
+    label[for="mail"],
+    label[for="cc-num"] {
         display: inline-block;
     }
 }

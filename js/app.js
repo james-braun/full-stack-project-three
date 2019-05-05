@@ -10,6 +10,12 @@ $('#other-title').hide();
 // Hide t-shirt color select menu.
 $('#colors-js-puns').hide()
 
+// Add a span to contain cedit card validation error message to the dom.
+$('label[for="cc-num"]').after('<span class="error-message card-error"></span>');
+
+$('#payment').val('credit card');
+$('#payment').html('<option value="credit card">Credit Card</option><option value="paypal">PayPal</option><option value="bitcoin">Bitcoin</option>');
+
 // Hide or show 'other job role' on 'other' select.
 $('#title').on('change', function () {
     if ($(this).val() === "other") {
@@ -42,7 +48,7 @@ $('#design').on('change', function () {
         $('#colors-js-puns').hide();
     }
 });
-
+ 
 // number holds the cost of the activities person is attending.
 var number = 0;
 
@@ -216,6 +222,22 @@ $('button').click(function (e) {
 
     // If crdit card payment form is chosen then...
     if ($('#payment').val() === "credit card") {
+
+        // Flag for conditional error messages.
+        var errorFlag = false;
+
+        // if user enters letters into the cc field show error.
+        regExpression = /\D/;
+        if (regExpression.test($('#cc-num').val())) {
+            $('.card-error').text("Numbers only");
+            errorFlag = true;
+        }
+
+        // if user doesn't enter 13 to 16 digits show error.
+        regExpression = /^\d{13,16}$/;
+        if (!regExpression.test($('#cc-num').val()) && !errorFlag) {
+            $('.card-error').text("13 to 16 digits");
+        }
 
         // If credit card number not between 13 and 16 digits
         // add red border.
