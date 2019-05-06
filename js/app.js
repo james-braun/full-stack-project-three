@@ -228,7 +228,7 @@ $('button').click(function (e) {
         var errorFlag = false;
 
         // if user enters letters into the cc field show error.
-        regExpression = /\D/;
+        regExpression = /[^0-9]/;
         if (regExpression.test($('#cc-num').val())) {
             $('.card-error').text("Numbers only");
             errorFlag = true;
@@ -238,10 +238,14 @@ $('button').click(function (e) {
         regExpression = /^\d{13,16}$/;
         if (!regExpression.test($('#cc-num').val()) && !errorFlag) {
             $('.card-error').text("13 to 16 digits");
+            errorFlag = true;
         } 
 
-        if ($('#cc-num').val() === '') {
-            $('.card-error').text('');
+        // if an error has occured on keyup remove error message.
+        if (errorFlag) {
+            $('#cc-num').on('keyup', function () {
+                $('.card-error').text('');
+            });
         }
 
         // If credit card number not between 13 and 16 digits
