@@ -244,6 +244,10 @@ $('button').click(function (e) {
             $('.card-error').text('');
         }
 
+        if ($('#cc-num').val() === '') {
+            $('.card-error').text('');
+        }
+
         // If credit card number not between 13 and 16 digits
         // add red border.
         if (!(/^[0-9]{13,16}$/.test($('#cc-num').val()))) {
