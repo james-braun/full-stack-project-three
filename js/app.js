@@ -232,12 +232,16 @@ $('button').click(function (e) {
         if (regExpression.test($('#cc-num').val())) {
             $('.card-error').text("Numbers only");
             errorFlag = true;
+        } else {
+            $('.card-error').text('');
         }
 
         // if user doesn't enter 13 to 16 digits show error.
         regExpression = /^\d{13,16}$/;
         if (!regExpression.test($('#cc-num').val()) && !errorFlag) {
             $('.card-error').text("13 to 16 digits");
+        } else {
+            $('.card-error').text('');
         }
 
         // If credit card number not between 13 and 16 digits
