@@ -8,7 +8,7 @@ $('[for="other-title"]').hide();
 $('#other-title').hide();
 
 // Hide t-shirt color select menu.
-$('#colors-js-puns').hide()
+$('#colors-js-puns').hide();
 
 // Add a span to contain cedit card validation error message to the dom.
 $('label[for="cc-num"]').after('<span class="error-message card-error"></span>');
@@ -190,7 +190,7 @@ $('button').click(function (e) {
         e.preventDefault();
         $('#name').addClass("error");
     } else {
-        $('#name').removeClass("error")
+        $('#name').removeClass("error");
     }
 
     // If email field does not match the expression
