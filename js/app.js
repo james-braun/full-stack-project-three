@@ -245,7 +245,6 @@ $('button').click(function (e) {
         regExpression = /^\d{13,16}$/;
         if (regExpression.test($('#cc-num').val()) && !errorFlag) {
             $('.card-error').text("");
-            errorFlag = false;
         } 
 
         // if an error has occured on keyup remove error message.

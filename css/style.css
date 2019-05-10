@@ -99,13 +99,13 @@ input {
 	font-weight: 500;
 	padding: .8em;
 	background: #c1deeb;
-	border: 2px solid #c1deeb;
+	border: 1px solid #c1deeb;
 	outline: none;
 }
 
 input:focus {
 	background: #fff;
-	border-color: #5e97b0;
+	border-color: lightslategrey;
 	transition: border-color .4s, background-color .4s;
 }
 
@@ -189,24 +189,29 @@ button:hover {
 }
 
 @media (min-width: 680px) {
-	header {
-		padding: 4.65em 0 2.5em;
-	}
-	.col {
-		float: left;
-	}
-	.col + .col {
-		margin-left: 2.5%;
-	}
-	.col-3 {
-		width: 23%;
-	}
-	.col-6 {
-		width: 49%;
-	}
+    header {
+        padding: 4.65em 0 2.5em;
+    }
+
+    .col {
+        float: left;
+    }
+
+    .col + .col {
+        margin-left: 2.5%;
+    }
+
+    .col-3 {
+        width: 23%;
+    }
+
+    .col-6 {
+        width: 49%;
+    }
+
     .error-message {
         position: relative;
-        display: inline;
+        display: inline-block;
         left: 60%;
     }
 
@@ -218,4 +223,3 @@ button:hover {
     label[for="cc-num"] {
         display: inline-block;
     }
-}
