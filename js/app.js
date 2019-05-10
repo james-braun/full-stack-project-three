@@ -241,10 +241,22 @@ $('button').click(function (e) {
             errorFlag = true;
         } 
 
+        // if user enters 13 to 16 digits hide error.
+        regExpression = /^\d{13,16}$/;
+        if (regExpression.test($('#cc-num').val()) && !errorFlag) {
+            $('.card-error').text("");
+            errorFlag = false;
+        } 
+
         // if an error has occured on keyup remove error message.
         if (errorFlag) {
-            $('#cc-num').on('keyup', function () {
-                $('.card-error').text('');
+            $('#cc-num').on('keyup', function (event) {
+                var keycode = (event.keycode ? event.keycode : event.which);
+                if (keycode === 13) {
+                    $('#cc-num').off();
+                } else {
+                    $('.card-error').text('');
+                }
             });
         }
 
