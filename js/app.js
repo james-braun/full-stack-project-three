@@ -293,7 +293,7 @@ $('#name,#mail,#cc-num,#zip,#cvv').focus(function () {
 });
 
 // Add a span to contain the real time validation message to the dom.
-$('label[for="mail"]').after('<span class="error-message"></span>');
+$('label[for="mail"]').after('<span class="error-message mail"></span>');
 
 // when a key is pressed...
 $('#mail').keyup(function () {
@@ -303,11 +303,11 @@ $('#mail').keyup(function () {
     // else display nothing.
     var regExpression = /^[^@]+@[^@.]+\.[a-z]+$/i;
     if (regExpression.test($(this).val())) {
-        $('.error-message').text("");
+        $('span[class="error-message mail"]').text("");
     } else {
-        $('.error-message').text("Format: user@example.com");
+        $('span[class="error-message mail"]').text("Format: user@example.com");
         if ($(this).val() === '') {
-            $('.error-message').text("");
+            $('span[class="error-message mail"]').text("");
         }
     }
 });
